@@ -2,7 +2,7 @@ import React from 'react';
 import {Row, Col, Layout, Menu} from "antd";
 import NavBar from "./components/Navbar/Navbar";
 import './App.scss'
-import PageHeader from "./components/Header/Header";
+import PageHeader from "./components/Profile_page/Header/Header";
 
 const {  Footer, Sider, Content } = Layout;
 
