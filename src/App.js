@@ -1,20 +1,14 @@
 import React from 'react';
-import './App.scss';
 import {Row, Col, Layout, Menu} from "antd";
 import NavBar from "./components/Navbar/Navbar";
 import './App.scss'
+import PageHeader from "./components/Header/Header";
 
-const { Header, Footer, Sider, Content } = Layout;
+const {  Footer, Sider, Content } = Layout;
 
 const App = () => (
-    <Layout className="app-wrapper">
-        <Header className="header">
-            <Row justify="space-around">
-                <Col>Avatar</Col>
-                <Col>Info</Col>
-                <Col>Menu</Col>
-            </Row>
-        </Header>
+    <Layout>
+        <PageHeader/>
         <Content>Content</Content>
         <Footer><NavBar/></Footer>
 
