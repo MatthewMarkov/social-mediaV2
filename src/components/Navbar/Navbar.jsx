@@ -1,17 +1,12 @@
 import React from "react";
-import {Affix, Col, Row} from "antd";
+import {Affix, Col, Row, Space} from "antd";
 import {NavLink} from "react-router-dom";
-import {
-    MessageOutlined,
-    UserOutlined
-} from '@ant-design/icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faUsers, faComments, faUserCircle} from '@fortawesome/free-solid-svg-icons'
 
 
 const NavBar = () => (
-    <Affix style={{position: 'absolute'}}>
-        <Row>
+        <Row justify="space-around">
             <Col>
                 <NavLink to="/users"><FontAwesomeIcon icon={faUsers}/></NavLink>
             </Col>
@@ -22,8 +17,6 @@ const NavBar = () => (
                 <NavLink to="/"><FontAwesomeIcon icon={faUserCircle}/></NavLink>
             </Col>
         </Row>
-    </Affix>
-
 );
 
 export default NavBar
