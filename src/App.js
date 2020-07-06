@@ -8,7 +8,7 @@ import ProfilePage from "./components/Profile_page/ProfilePage";
 const {  Footer, Sider, Content } = Layout;
 
 const App = () => (
-    <Layout>
+    <Layout className="app-wrapper">
         <Route path="/" component={ProfilePage}/>
         <Footer><NavBar/></Footer>
 
