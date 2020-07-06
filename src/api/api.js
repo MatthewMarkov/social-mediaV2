@@ -1,5 +1,5 @@
 const axios = require('axios').default
-export const instance = axios.create({
+ const instance = axios.create({
     withCredentials: true,
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
     headers: {
@@ -7,3 +7,4 @@ export const instance = axios.create({
     },
 })
 
+export default instance
