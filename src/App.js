@@ -2,14 +2,14 @@ import React from 'react';
 import {Row, Col, Layout, Menu} from "antd";
 import NavBar from "./components/Navbar/Navbar";
 import './App.scss'
-import PageHeader from "./components/Profile_page/Header/Header";
+import {Route} from "react-router-dom";
+import ProfilePage from "./components/Profile_page/ProfilePage";
 
 const {  Footer, Sider, Content } = Layout;
 
 const App = () => (
     <Layout>
-        <PageHeader/>
-        <Content>Content</Content>
+        <Route path="/" component={ProfilePage}/>
         <Footer><NavBar/></Footer>
 
     </Layout>
