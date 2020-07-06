@@ -1,5 +1,7 @@
 import { stopSubmit } from 'redux-form';
 import {authAPI} from "../api/auth-api";
+import {Redirect} from "react-router-dom";
+import React from "react";
 
 const initialState = {
     id: null,

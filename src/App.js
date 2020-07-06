@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Row, Col, Layout, Menu, Spin} from "antd";
+import {Row, Col, Layout, Menu, Spin, Affix} from "antd";
 import NavBar from "./components/Navbar/Navbar";
 import './App.scss'
 import {Route} from "react-router-dom";
@@ -15,7 +15,7 @@ const App = (props) => {
         props.initializeApp()
     },[])
     if (!props.initialized) {
-        return <Spin />
+        return <div className="spinner"><Spin size="large" /></div>
     }
     return (
     <Layout className="app-wrapper">
