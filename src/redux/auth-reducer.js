@@ -1,6 +1,5 @@
 import { stopSubmit } from 'redux-form';
 import {authAPI} from "../api/auth-api";
-import {Redirect} from "react-router-dom";
 import React from "react";
 
 const initialState = {
@@ -52,6 +51,7 @@ export const signIn = () => async (dispatch) => {
             return true
         } else {
             alert(response.messages[0])
+            return false
         }
     } catch (e) {
         alert(e)
@@ -64,6 +64,7 @@ export const getCaptchaUrl = () => async (dispatch) => {
 export const logIn = (email, password, rememberMe, captcha) => async (dispatch) => {
     const response = await authAPI.login(email, password, rememberMe, captcha);
     if (response.resultCode === 0) {
+        debugger
         dispatch(signIn());
     } else {
         if (response.resultCode === 10) {
