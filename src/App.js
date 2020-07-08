@@ -8,16 +8,14 @@ import {connect} from "react-redux";
 import {initializeApp} from "./redux/app-reducer";
 import LoginPage from "./components/LoginPage/LoginPage";
 
-const {  Footer, Sider, Content } = Layout;
+const {  Footer } = Layout;
 
 
 const App = (props) => {
     useEffect(() => {
-        debugger
         props.initializeApp()
     },[])
     if (!props.isFetchingCompleted) {
-        debugger
         return <div className="spinner"><Spin size="large" /></div>
     }
     return (

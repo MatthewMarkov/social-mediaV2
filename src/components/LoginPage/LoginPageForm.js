@@ -1,16 +1,14 @@
 import {Field, reduxForm} from "redux-form";
 import React from "react";
-import {Button, Checkbox} from "antd";
+import {renderField, validate, warn} from "./LoginPageFormValidation";
 
 const LoginPageForm = (props) => (
     <form onSubmit={props.handleSubmit}>
         <div>
-            <label htmlFor='email'>Email</label>
-            <Field name='email' component='input' type='text'/>
+            <Field name='email' component={renderField} type='text' label='email'/>
         </div>
         <div>
-            <label htmlFor='password'>Password</label>
-            <Field name='password' component='input' type='text'/>
+            <Field name='password' component={renderField} type='text' label='password'/>
         </div>
         <div>
             <Field type='checkbox' name='rememberMe' component='input'/>remember me
@@ -21,4 +19,4 @@ const LoginPageForm = (props) => (
     </form>
 )
 
-export const LoginPageFormContainer = reduxForm({form: 'login'})(LoginPageForm)
+export const LoginPageFormContainer = reduxForm({form: 'login', validate, warn})(LoginPageForm)
