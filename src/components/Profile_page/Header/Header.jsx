@@ -1,6 +1,7 @@
 import React from 'react';
 import {Row, Col, Layout, Avatar, Button} from "antd";
 import s from './Header.module.scss'
+import SideMenu from "../../SideMenu/SideMenu";
 
 const { Header } = Layout;
 
@@ -12,7 +13,8 @@ const PageHeader = () => (
                 <Row>Name</Row>
                 <Row>Status</Row>
             </Col>
-            <Col>Menu</Col>
+            <Col>
+            </Col>
         </Row>
         <Row justify="center">
             <Button type="primary">Edit page</Button>

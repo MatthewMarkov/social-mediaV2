@@ -2,11 +2,12 @@ import React, {useEffect, useState} from 'react';
 import {Row, Col, Layout, Menu, Spin, Affix} from "antd";
 import NavBar from "./components/Navbar/Navbar";
 import './App.scss'
-import {Redirect, Route} from "react-router-dom";
+import {Switch, Route} from "react-router-dom";
 import ProfilePage from "./components/Profile_page/ProfilePage";
 import {connect} from "react-redux";
 import {initializeApp} from "./redux/app-reducer";
 import LoginPage from "./components/LoginPage/LoginPage";
+import SideMenu from "./components/SideMenu/SideMenu";
 
 const {  Footer } = Layout;
 
@@ -20,8 +21,11 @@ const App = (props) => {
     }
     return (
     <Layout className="app-wrapper">
+        <Switch>
         <Route exact path="/" component={ProfilePage}/>
         <Route path="/login" component={LoginPage}/>
+        </Switch>
+        <SideMenu/>
         <Footer><NavBar/></Footer>
     </Layout>
 )};
