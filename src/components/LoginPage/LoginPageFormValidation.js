@@ -1,7 +1,6 @@
 import React from "react";
 
 export const validate = (values) => {
-    debugger
     const errors = {}
     if (!values.email) {
         errors.email = 'required'
@@ -12,7 +11,6 @@ export const validate = (values) => {
     return errors
 }
 export const warn = (values) => {
-    debugger
     const warnings = {}
     if (!values.email) {
         return
@@ -32,7 +30,6 @@ export const renderField = ({
                          type,
                          meta: {touched, error, warning}
                      }) => {
-    debugger
  return (
     <div>
         <label>{label}</label>

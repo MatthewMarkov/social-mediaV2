@@ -1,5 +1,5 @@
 import React from "react";
-import {Layout} from "antd";
+import {Button, Layout} from "antd";
 import {LoginPageFormContainer} from "./LoginPageForm";
 import {logIn} from "../../redux/auth-reducer";
 import {connect} from "react-redux";
@@ -9,7 +9,6 @@ const {Header, Footer, Content} = Layout
 
 const LoginPage = (props) => {
     const onSubmit = (loginData) => {
-        debugger
         props.logIn(loginData.email, loginData.password, loginData.rememberMe, loginData.captcha)
     }
     return (
@@ -19,6 +18,8 @@ const LoginPage = (props) => {
             </Header>
             <Content>
                 <LoginPageFormContainer onSubmit={onSubmit}/>
+                <div>Have not sigh up yet?</div>
+                <Button type='primary' href='https://social-network.samuraijs.com/signUp' target='_blank'>SignUp</Button>
             </Content>
             <Footer>
                 Footer

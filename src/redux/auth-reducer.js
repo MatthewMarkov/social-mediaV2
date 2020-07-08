@@ -48,10 +48,8 @@ export const signIn = () => async (dispatch) => {
         if (response.resultCode === 0) {
             const {id, login, email} = response.data;
             dispatch(Actions.setAuthUserData(id, login, email, true));
-            return true
         } else {
             alert(response.messages[0])
-            return false
         }
     } catch (e) {
         alert(e)
@@ -64,7 +62,6 @@ export const getCaptchaUrl = () => async (dispatch) => {
 export const logIn = (email, password, rememberMe, captcha) => async (dispatch) => {
     const response = await authAPI.login(email, password, rememberMe, captcha);
     if (response.resultCode === 0) {
-        debugger
         dispatch(signIn());
     } else {
         if (response.resultCode === 10) {

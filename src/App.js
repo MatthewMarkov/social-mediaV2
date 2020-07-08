@@ -20,7 +20,6 @@ const App = (props) => {
     }
     return (
     <Layout className="app-wrapper">
-        {!props.initialized &&  <Redirect to="/login"/>}
         <Route exact path="/" component={ProfilePage}/>
         <Route path="/login" component={LoginPage}/>
         <Footer><NavBar/></Footer>
@@ -29,7 +28,7 @@ const App = (props) => {
 
 const mapStateToProps = (state) => ({
     isFetchingCompleted: state.app.isFetchingCompleted,
-    initialized: state.app.initialized,
+    isAuth: state.auth.isAuth,
 });
 
 export default connect(mapStateToProps, { initializeApp })(App);

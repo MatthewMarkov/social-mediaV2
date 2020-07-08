@@ -13,7 +13,6 @@ const appReducer = (state = initialState, action) => {
                 initialized: true,
             };
         case 'COMPLETE_DATA_FETCHING':
-            debugger
             return {
                 ...state,
                 isFetchingCompleted: true,
@@ -30,13 +29,8 @@ export const Actions = {
 };
 // Thunks
 export const initializeApp = () => async (dispatch) => {
-    const response= await dispatch(signIn());
-    if (response) {
-        dispatch(Actions.initializeUser());
-        dispatch(Actions.completeDataFetching())
-    } else {
-        dispatch(Actions.completeDataFetching())
-    }
+    await dispatch(signIn());
+    dispatch(Actions.completeDataFetching())
 };
 
 export default appReducer;
