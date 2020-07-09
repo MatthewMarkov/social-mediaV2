@@ -1,7 +1,5 @@
 import React, {useEffect} from 'react';
-import {Row, Col, Layout, Menu} from "antd";
-import UserInfo from "./Body/User_info/UserInfo";
-import Posts from "./Body/Posts/Posts";
+import {Row, Col, Layout, Menu} from "antd";import Posts from "./Body/Posts/Posts";
 import {compose} from "redux";
 import {withAuthRedirect} from "../../hoc/WithAuthRedirect";
 import {connect} from "react-redux";
@@ -33,7 +31,6 @@ const ProfilePage = ({profile, status, isAuth, authID, getProfile, getStatus, ..
     return (
         <Content className={s.profilePage}>
             <MainUserInfo profile={profile} status={status}/>
-            <UserInfo/>
             <Posts/>
         </Content>
     )
