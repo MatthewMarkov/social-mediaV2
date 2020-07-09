@@ -9,6 +9,7 @@ import {initializeApp} from "./redux/app-reducer";
 import LoginPage from "./components/LoginPage/LoginPage";
 import SideMenu from "./components/SideMenu/SideMenu";
 import PageHeader from "./components/Header/Header";
+import Loader from "./components/Loader/Loader";
 
 const {Footer} = Layout;
 
@@ -18,7 +19,7 @@ const App = (props) => {
         props.initializeApp()
     }, [])
     if (!props.isFetchingCompleted) {
-        return <div className="spinner"><Spin size="large"/></div>
+        return <Loader/>
     }
     return (
         <Layout className="app-wrapper">

@@ -1,4 +1,4 @@
-import {AxiosInstance as instance} from "axios";
+import instance from "./api";
 
 export const profileAPI = {
     getUserProfile(userID) {

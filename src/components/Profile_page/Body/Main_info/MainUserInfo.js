@@ -1,19 +1,19 @@
 import {Avatar, Button, Col, Row} from "antd";
 import React from "react";
+import UserIcon from './../../../../assets/user.png'
+import s from './MainInfo.module.scss'
 
-const MainUserInfo = () => (
+const MainUserInfo = (props) => (
     <>
-        <Row justify="space-around" align="middle">
-            <Col><Avatar size="large"/></Col>
-            <Col>
+        <Row className={s.wrapper} justify="space-around" align="middle">
+            <Col className={s.firstCol}>
+                <img src={props.profile.photos.large || UserIcon}/>
+            </Col>
+            <Col className={s.secondCol}>
                 <Row>Name</Row>
                 <Row>Status</Row>
+                <Row><Button>Show additional info</Button></Row>
             </Col>
-            <Col>
-            </Col>
-        </Row>
-        <Row justify="center">
-            <Button type="primary">Edit page</Button>
         </Row>
     </>
 )

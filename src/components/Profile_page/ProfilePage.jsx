@@ -8,24 +8,31 @@ import {connect} from "react-redux";
 import MainUserInfo from "./Body/Main_info/MainUserInfo";
 import s from './ProfilePage.module.scss'
 import {getProfile, getStatus} from "../../redux/profile-reducer";
+import Loader from "../Loader/Loader";
 
 const {Content} = Layout;
 
-const ProfilePage = (props) => {
+const ProfilePage = ({profile, status, isAuth, authID, getProfile, getStatus, ...props}) => {
 
     useEffect(() => {
-        let { userID } = this.props.match.params;
+        debugger
+        let userID = props.match.params.id;
         if (!userID) {
-            userID = this.props.authID;
+            debugger
+            userID = authID;
             if (!userID) {
-                this.props.history.push('/login');
+                props.history.push('/login');
             }
         }
-        this.props.getProfile(userID);
-        this.props.getStatus(userID);
-    },[])
-    return (<Content className={s.profilePage}>
-            <MainUserInfo/>
+        getProfile(userID);
+        getStatus(userID);
+    }, [])
+    if (!profile) {
+        return <Loader/>
+    }
+    return (
+        <Content className={s.profilePage}>
+            <MainUserInfo profile={profile} status={status}/>
             <UserInfo/>
             <Posts/>
         </Content>
@@ -33,7 +40,11 @@ const ProfilePage = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-    isAuth: state.auth.isAuth
+    profile: state.profile.profile,
+    status: state.profile.status,
+    statusError: state.profile.statusError,
+    isAuth: state.auth.isAuth,
+    authID: state.auth.id,
 })
 
-export default compose(connect(mapStateToProps, {getProfile,getStatus}), withAuthRedirect)(ProfilePage);
+export default compose(connect(mapStateToProps, {getProfile, getStatus}), withAuthRedirect)(ProfilePage);
