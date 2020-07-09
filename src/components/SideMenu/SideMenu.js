@@ -8,6 +8,7 @@ import s from './SideMenu.module.scss'
 const {Sider} = Layout
 const SideMenu = () => (
     <Sider className={s.sideMenu}
+           width={150}
         breakpoint="lg"
         collapsedWidth="0"
         onBreakpoint={broken => {
@@ -26,7 +27,7 @@ const SideMenu = () => (
                 <NavLink to="/messages"><FontAwesomeIcon icon={faComments}/>Messages</NavLink>
             </Menu.Item>
             <Menu.Item key="3">
-                <NavLink to="/"><FontAwesomeIcon icon={faUserCircle}/>My profile</NavLink>
+                <NavLink to="/profile"><FontAwesomeIcon icon={faUserCircle}/>My profile</NavLink>
             </Menu.Item>
             <Menu.Item key="4">
                 Logout

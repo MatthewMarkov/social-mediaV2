@@ -1,7 +1,15 @@
 .header {
-  background-color: white;
-  color: black;
-  padding: 10px 10px;
-  height: auto;
+  background-color: #1C1C54;
+  color: white;
+  padding: 0px 10px;
+  height: 100px;
+  .wrapper {
+    .logo {
+      img {
+        height: 100px;
+        width: 100px;
+      }
+    }
+  }
 
 }

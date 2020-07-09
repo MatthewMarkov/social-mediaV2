@@ -27,6 +27,8 @@ const App = (props) => {
                 <SideMenu/>
                 <Switch>
                     <Route exact path="/" component={ProfilePage}/>
+                    <Route exact path="/profile" component={ProfilePage}/>
+                    <Route path="/profile/:id" component={ProfilePage}/>
                     <Route path="/login" component={LoginPage}/>
                 </Switch>
             </Layout>
