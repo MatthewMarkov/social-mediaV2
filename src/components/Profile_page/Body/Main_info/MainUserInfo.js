@@ -1,12 +1,8 @@
-import React from 'react';
-import {Row, Col, Layout, Avatar, Button} from "antd";
-import s from './Header.module.scss'
-import SideMenu from "../../SideMenu/SideMenu";
+import {Avatar, Button, Col, Row} from "antd";
+import React from "react";
 
-const { Header } = Layout;
-
-const PageHeader = () => (
-    <Header className={s.header}>
+const MainUserInfo = () => (
+    <>
         <Row justify="space-around" align="middle">
             <Col><Avatar size="large"/></Col>
             <Col>
@@ -19,7 +15,6 @@ const PageHeader = () => (
         <Row justify="center">
             <Button type="primary">Edit page</Button>
         </Row>
-    </Header>
-);
-
-export default PageHeader;
+    </>
+)
+export default MainUserInfo

@@ -1,12 +1,7 @@
 @import '~antd/dist/antd.css';
 
 .app-wrapper {
-  Footer {
-    position: fixed;
-    zIndex: 1;
-    width: 100%;
-    bottom: 0;
-  }
+  background-color: #f0f2f5;
 }
 .spinner {
   text-align: center;
